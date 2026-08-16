@@ -39,6 +39,7 @@ git clone https://github.com/pixelieee/dsh-lol-client.git
 
 请这样做：
 1. 用你的文件读取工具，读出这两个文件的完整内容。
+   如果文件较大，请分段读取（offset/limit）直到全部读完，不要截断。
    如果读不到这两个文件，请停下来告诉我，我会把文件内容粘贴给你 — 不要编造代码。
 2. 用 cordis_define 创建插件：
    - kind: new，idPrefix 用 lolc
@@ -47,6 +48,8 @@ git clone https://github.com/pixelieee/dsh-lol-client.git
 3. 用 cordis_run 启动；如果出现授权确认，请提示我点允许。
 4. 启动成功后告诉我怎么用。
 ```
+
+> 提示：如果这个会话之前已经装过本插件，请先在**设置 → 插件**里把旧版删掉，再走上面的步骤，避免界面重复挂载。
 
 安装好之后，页面左下角会出现英雄联盟客户端的启动按钮，点击打开大厅。之后想停用/删除，在**设置 → 插件**面板里操作即可。
 
