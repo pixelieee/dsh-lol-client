@@ -2,6 +2,12 @@
 
 给 [DeepSeek Harness](https://github.com/topics/deepseek-harness) 的 Web GUI 换上高保真《英雄联盟》客户端复刻界面。动态 Cordis 插件，双半实现（Client + Host），全部走既有扩展点（theme token / `shell.overlay`），不改动宿主框架。
 
+## 效果预览
+
+| 窗口化登录大厅 | 对局页 + 英雄池 | 最小化 + 跟随英雄的整页壁纸 |
+|---|---|---|
+| ![窗口化登录大厅](screenshots/screenshot-client-lobby.png) | ![对局页与英雄池](screenshots/screenshot-play-champions.png) | ![最小化与壁纸](screenshots/screenshot-minimized-wallpaper.png) |
+
 ## 特性
 
 - **窗口化登录大厅**：居中浮动窗口，可拖动、双击居中、最小化为右下角启动器；窗口外 DSH 对话页始终可见可操作。
@@ -30,6 +36,7 @@
 ├── plugin-host.js         Host 半源码（RPC 接收器 + lolc_dom_report 工具）
 ├── README.md              本文件
 ├── CHANGELOG.md           版本演变日志（v1 → v5.7）
+├── screenshots/           效果预览截图
 └── docs/
     ├── implementation-notes.md     架构决策记录（英文）
     └── implementation-notes.zh.md  架构决策记录（中文）
