@@ -18,32 +18,43 @@
 - **操作是真的**：点「开始对局」「开始排位」会真正新建一个智能体能用的对话；点「进入战队」会打开对应工作区；每个操作都有金色提示条反馈。
 - **自带体检**：记录每次点击并上报，方便调试时确认按钮真的响应了。
 
-## 快速部署（把下面这段话发给 DeepSeek Harness 助手即可）
+## 快速部署（先克隆到本机，再让助手安装）
 
-复制下面整段,粘贴到 DeepSeek Harness 的对话框里发给助手,助手会自己安装好:
+**第 1 步：把仓库克隆到本机**（电脑上打开终端/命令行执行）：
 
-```text
-请帮我安装这个插件：https://github.com/pixelieee/dsh-lol-client
-
-方法：
-1. cordis_define 创建插件（kind: new），Host 代码用
-   https://raw.githubusercontent.com/pixelieee/dsh-lol-client/main/plugin-host.js
-   Client 代码用
-   https://raw.githubusercontent.com/pixelieee/dsh-lol-client/main/plugin-client.js
-   （两个文件的完整内容）
-2. cordis_run 启动；如果出现授权确认，请提示我点允许。
-3. 启动成功后告诉我怎么用。
-
-这是一个英雄联盟客户端界面皮肤：窗口化登录大厅、英雄池、对局页、壁纸跟随所选英雄。
+```bash
+git clone https://github.com/pixelieee/dsh-lol-client.git
 ```
 
-安装好之后,页面左下角会出现英雄联盟客户端的启动按钮,点击打开大厅。之后想停用/删除,在**设置 → 插件**面板里操作即可。
+不会用命令行的话，也可以在仓库页面点绿色的 **Code → Download ZIP**，解压到任意文件夹。
+
+**第 2 步：把下面这段话复制发给 DeepSeek Harness 助手**（把「克隆到的路径」换成你刚才的位置）：
+
+```text
+请帮我安装一个英雄联盟客户端皮肤插件。
+
+插件代码在我本机的「克隆到的路径\dsh-lol-client」文件夹里，有两个文件：
+- plugin-host.js（后台代码）
+- plugin-client.js（界面代码）
+
+请这样做：
+1. 用你的文件读取工具，读出这两个文件的完整内容。
+   如果读不到这两个文件，请停下来告诉我，我会把文件内容粘贴给你 — 不要编造代码。
+2. 用 cordis_define 创建插件：
+   - kind: new，idPrefix 用 lolc
+   - Host 代码 = plugin-host.js 的内容
+   - Client 代码 = plugin-client.js 的内容
+3. 用 cordis_run 启动；如果出现授权确认，请提示我点允许。
+4. 启动成功后告诉我怎么用。
+```
+
+安装好之后，页面左下角会出现英雄联盟客户端的启动按钮，点击打开大厅。之后想停用/删除，在**设置 → 插件**面板里操作即可。
 
 ## 文件结构
 
 ```
-├── plugin-client.js       界面代码（大厅、主题、壁纸、点击上报）—— 粘贴到前端框
-├── plugin-host.js         后台代码（接收点击上报 + 调试工具）—— 粘贴到后端框
+├── plugin-client.js       界面代码（大厅、主题、壁纸、点击上报）
+├── plugin-host.js         后台代码（接收点击上报 + 调试工具）
 ├── README.md              本文件
 ├── CHANGELOG.md           更新日志（从 v1 到 v5.7 的全部改动）
 ├── screenshots/           效果预览截图
