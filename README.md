@@ -18,17 +18,26 @@
 - **操作是真的**：点「开始对局」「开始排位」会真正新建一个智能体能用的对话；点「进入战队」会打开对应工作区；每个操作都有金色提示条反馈。
 - **自带体检**：记录每次点击并上报，方便调试时确认按钮真的响应了。
 
-## 快速部署（照着做，2 分钟）
+## 快速部署（把下面这段话发给 DeepSeek Harness 助手即可）
 
-这个皮肤要由 **DeepSeek Harness 里的助手**帮你装上（界面里没有"新建插件"按钮，插件是助手用后台工具创建的）：
+复制下面整段,粘贴到 DeepSeek Harness 的对话框里发给助手,助手会自己安装好:
 
-1. 打开一个 DeepSeek Harness 对话，把下面两段代码发给助手，说"请装这个插件"：
-   - `plugin-host.js` 的内容（后端/工具部分）
-   - `plugin-client.js` 的内容（界面部分）
-2. 助手会创建并启用插件；如果弹出一个授权确认，点**允许**。
-3. 完成——页面左下角会出现英雄联盟客户端的启动按钮，点击打开大厅。
+```text
+请帮我安装这个插件：https://github.com/pixelieee/dsh-lol-client
 
-如果助手已经装过，之后想停用/删除：在**设置 → 插件**面板里找到它，点停止或移除即可。
+方法：
+1. cordis_define 创建插件（kind: new），Host 代码用
+   https://raw.githubusercontent.com/pixelieee/dsh-lol-client/main/plugin-host.js
+   Client 代码用
+   https://raw.githubusercontent.com/pixelieee/dsh-lol-client/main/plugin-client.js
+   （两个文件的完整内容）
+2. cordis_run 启动；如果出现授权确认，请提示我点允许。
+3. 启动成功后告诉我怎么用。
+
+这是一个英雄联盟客户端界面皮肤：窗口化登录大厅、英雄池、对局页、壁纸跟随所选英雄。
+```
+
+安装好之后,页面左下角会出现英雄联盟客户端的启动按钮,点击打开大厅。之后想停用/删除,在**设置 → 插件**面板里操作即可。
 
 ## 文件结构
 
