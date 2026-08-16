@@ -4,9 +4,17 @@
 
 ## 效果预览
 
-| 窗口化登录大厅 | 对局页 + 英雄池 | 最小化 + 跟随英雄的整页壁纸 |
-|---|---|---|
-| ![窗口化登录大厅](screenshots/screenshot-client-lobby.png) | ![对局页与英雄池](screenshots/screenshot-play-champions.png) | ![最小化与壁纸](screenshots/screenshot-minimized-wallpaper.png) |
+**窗口化登录大厅**
+
+![窗口化登录大厅](screenshots/screenshot-client-lobby.png)
+
+**对局页 + 英雄池**
+
+![对局页与英雄池](screenshots/screenshot-play-champions.png)
+
+**最小化 + 跟随英雄的整页壁纸**
+
+![最小化与壁纸](screenshots/screenshot-minimized-wallpaper.png)
 
 ## 特性
 
